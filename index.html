@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio - Márcio Oliveira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- MENU -->
   <header>
-    <h1>Márcio Oliveira</h1>
+    <a class="logo" href="#inicio">Márcio Oliveira</a>
 
     <nav>
       <a href="#sobre">Sobre</a>
@@ -21,72 +22,155 @@
   </header>
 
   <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <span class="tag">Desenvolvedor em formação</span>
+        <h1>Construindo experiências web modernas, funcionais e com identidade.</h1>
+        <p>
+          Sou Márcio Oliveira, estudante de Ciência da Computação com foco em desenvolvimento web.
+          Gosto de transformar ideias em interfaces claras, sistemas úteis e projetos que comunicam profissionalismo.
+        </p>
 
-    <!-- SOBRE -->
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p>
-        Sou Márcio Oliveira, estudante de Ciência da Computação e desenvolvedor web apaixonado por tecnologia.
-        Tenho experiência com HTML, CSS, JavaScript, React e Node.js, e estou sempre buscando evoluir minhas habilidades
-        para criar sistemas modernos, eficientes e escaláveis.
-      </p>
-    </section>
-
-    <!-- FORMAÇÃO -->
-    <section id="formacao">
-      <h2>Formação</h2>
-      <p>
-        🎓 Ciência da Computação (em andamento)<br><br>
-        📚 Cursos complementares em Desenvolvimento Web Full Stack<br><br>
-        🌎 Inglês: Intermediário<br><br>
-        💻 Foco em: JavaScript, React, Node.js e desenvolvimento de sistemas web
-      </p>
-    </section>
-
-    <!-- PORTFÓLIO -->
-    <section id="portfolio">
-      <h2>Portfólio</h2>
-      <p>Alguns projetos desenvolvidos durante minha trajetória:</p>
-
-      <div class="projetos">
-
-        <div class="card">
-          <h3>Dashboard de Infoprodutos</h3>
-          <p>Sistema com gráficos, autenticação e controle de dados.</p>
-          <a href="https://dashboard-infor-hub.vercel.app/" target="_blank">Ver projeto</a>
+        <div class="hero-acoes">
+          <a class="botao botao-primario" href="#portfolio">Ver projetos</a>
+          <a class="botao botao-secundario" href="#contato">Falar comigo</a>
         </div>
 
-        <div class="card">
-          <h3>Portfólio Profissional</h3>
-          <p>Site moderno com apresentação de habilidades e projetos.</p>
-          <a href="https://devportifolio-jr.vercel.app/" target="_blank">Ver projeto</a>
+        <div class="hero-metricas">
+          <div>
+            <strong>HTML, CSS e JS</strong>
+            <span>Base sólida para interfaces responsivas</span>
+          </div>
+          <div>
+            <strong>React e Node.js</strong>
+            <span>Evolução contínua em projetos full stack</span>
+          </div>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>Masseur Match USA</h3>
-          <p>Sistema de agendamento com integração de pagamentos.</p>
-          <a href="https://masseur-match-usa.vercel.app/" target="_blank">Ver projeto</a>
-        </div>
-
+      <div class="hero-card">
+        <p class="hero-card-titulo">Objetivo atual</p>
+        <h2>Ganhar experiência prática e entregar projetos cada vez mais completos.</h2>
+        <p>
+          Busco oportunidades para aplicar meu conhecimento, fortalecer meu portfólio e crescer como desenvolvedor.
+        </p>
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <section id="sobre">
+      <div class="section-heading">
+        <span class="tag">Sobre mim</span>
+        <h2>Quem está por trás dos projetos</h2>
+      </div>
+
+      <div class="sobre-grid">
+        <div class="foto-card">
+          <div class="foto-wrapper">
+            <img
+              id="foto-perfil"
+              src=""
+              alt="Foto de Márcio Oliveira"
+              hidden
+            >
+            <div class="foto-placeholder" id="foto-placeholder">
+              <span>Sua foto entra aqui</span>
+              <small>Me envie a imagem para eu conectar direto nesta área</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre-card">
+          <p>
+            Sou Márcio Oliveira, estudante de Ciência da Computação e desenvolvedor web apaixonado por tecnologia.
+            Tenho experiência com HTML, CSS, JavaScript, React e Node.js, e estou sempre buscando evoluir minhas habilidades
+            para criar sistemas modernos, eficientes e escaláveis.
+          </p>
+          <p>
+            Meu foco está em unir visual limpo, boa usabilidade e código organizado para entregar páginas e sistemas
+            com mais clareza, confiança e resultado.
+          </p>
+
+          <div class="sobre-topicos">
+            <span>Interfaces responsivas</span>
+            <span>Projetos práticos</span>
+            <span>Aprendizado constante</span>
+            <span>Visão full stack</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <div class="section-heading">
+        <span class="tag">Formação</span>
+        <h2>Base acadêmica e desenvolvimento contínuo</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>Ciência da Computação</strong>
+          <p>Graduação em andamento com foco em lógica, programação e desenvolvimento de sistemas.</p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Cursos complementares em Desenvolvimento Web Full Stack</strong>
+          <p>Prática com criação de interfaces, integração entre front-end e back-end e construção de projetos reais.</p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Inglês intermediário</strong>
+          <p>Leitura técnica e estudo contínuo para ampliar repertório profissional e acesso a novas referências.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-heading">
+        <span class="tag">Portfólio</span>
+        <h2>Projetos que mostram minha evolução</h2>
+      </div>
+
+      <p class="section-texto">Alguns projetos desenvolvidos durante minha trajetória:</p>
+
+      <div class="projetos">
+        <article class="card">
+          <span class="card-etiqueta">Dashboard</span>
+          <h3>Dashboard de Infoprodutos</h3>
+          <p>Sistema com gráficos, autenticação e controle de dados para acompanhamento mais inteligente.</p>
+          <a href="https://dashboard-infor-hub.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
+        </article>
+
+        <article class="card">
+          <span class="card-etiqueta">Portfólio</span>
+          <h3>Portfólio Profissional</h3>
+          <p>Site com apresentação de habilidades, projetos e identidade visual voltada para posicionamento profissional.</p>
+          <a href="https://devportifolio-jr.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
+        </article>
+
+        <article class="card">
+          <span class="card-etiqueta">Sistema Web</span>
+          <h3>Masseur Match USA</h3>
+          <p>Plataforma de agendamento com fluxo organizado e integração de pagamentos.</p>
+          <a href="https://masseur-match-usa.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
+        </article>
+      </div>
+    </section>
+
     <section id="contato">
-      <h2>Contato</h2>
+      <div class="section-heading">
+        <span class="tag">Contato</span>
+        <h2>Vamos conversar sobre oportunidades e projetos</h2>
+      </div>
 
       <form id="formContato">
         <input type="text" id="nome" placeholder="Seu nome">
         <input type="email" id="email" placeholder="Seu e-mail">
         <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviar mensagem</button>
       </form>
-
     </section>
-
   </main>
 
-  <!-- RODAPÉ -->
   <footer>
     <p>© 2026 Márcio Oliveira - Todos os direitos reservados</p>
   </footer>
