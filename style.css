@@ -8,7 +8,23 @@
   --accent: #8b5cf6;
   --accent-strong: #22d3ee;
   --accent-soft: #fde68a;
+  --button-text: #04111f;
   --shadow: 0 24px 60px rgba(2, 6, 23, 0.38);
+}
+
+/* Alternância de tema acionada via JavaScript */
+body.tema-claro {
+  --bg: #eff6ff;
+  --bg-soft: #dbeafe;
+  --card: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(37, 99, 235, 0.16);
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-strong: #0891b2;
+  --accent-soft: #92400e;
+  --button-text: #ffffff;
+  --shadow: 0 20px 50px rgba(148, 163, 184, 0.28);
 }
 
 * {
@@ -28,7 +44,15 @@ body {
   background:
     radial-gradient(circle at top left, rgba(139, 92, 246, 0.22), transparent 32%),
     radial-gradient(circle at 85% 15%, rgba(34, 211, 238, 0.18), transparent 24%),
-    linear-gradient(180deg, #020817 0%, #07111f 45%, #0b1426 100%);
+    linear-gradient(180deg, #020817 0%, var(--bg) 45%, #0b1426 100%);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.tema-claro {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 32%),
+    radial-gradient(circle at 85% 15%, rgba(8, 145, 178, 0.15), transparent 24%),
+    linear-gradient(180deg, #f8fbff 0%, var(--bg) 50%, #e2e8f0 100%);
 }
 
 body::before {
@@ -50,14 +74,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
   padding: 18px 8%;
   backdrop-filter: blur(16px);
   background: rgba(2, 8, 23, 0.72);
   border-bottom: 1px solid rgba(148, 163, 184, 0.16);
 }
 
+body.tema-claro header {
+  background: rgba(248, 250, 252, 0.82);
+}
+
 .logo,
-nav a {
+nav a,
+.card a {
   text-decoration: none;
 }
 
@@ -67,6 +97,32 @@ nav a {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+}
+
+.header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.tema-botao,
+.menu-botao {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.48);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+body.tema-claro .tema-botao,
+body.tema-claro .menu-botao {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.menu-botao {
+  display: none;
 }
 
 nav {
@@ -84,7 +140,8 @@ nav a {
   transition: 0.25s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.ativo {
   color: var(--text);
   background: rgba(139, 92, 246, 0.14);
 }
@@ -172,14 +229,23 @@ footer p {
 }
 
 .botao-primario {
-  color: #04111f;
+  color: var(--button-text);
   background: linear-gradient(135deg, var(--accent-strong), #67e8f9);
+}
+
+body.tema-claro .botao-primario {
+  background: linear-gradient(135deg, var(--accent), #38bdf8);
 }
 
 .botao-secundario {
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(15, 23, 42, 0.5);
+}
+
+body.tema-claro .botao-secundario {
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(37, 99, 235, 0.14);
 }
 
 .hero-metricas {
@@ -343,6 +409,10 @@ form {
   border: 1px solid rgba(34, 211, 238, 0.18);
 }
 
+body.tema-claro .sobre-topicos span {
+  color: #0f766e;
+}
+
 .timeline,
 .projetos {
   display: grid;
@@ -381,7 +451,6 @@ form {
   display: inline-flex;
   margin-top: 18px;
   color: var(--text);
-  text-decoration: none;
   font-weight: 700;
 }
 
@@ -414,6 +483,11 @@ textarea {
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
+body.tema-claro input,
+body.tema-claro textarea {
+  background: rgba(255, 255, 255, 0.84);
+}
+
 input::placeholder,
 textarea::placeholder {
   color: #7f8ca4;
@@ -430,7 +504,7 @@ textarea {
   resize: vertical;
 }
 
-button {
+button[type="submit"] {
   width: fit-content;
   border: none;
   padding: 14px 24px;
@@ -442,7 +516,7 @@ button {
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
   transform: translateY(-2px);
   filter: brightness(1.03);
 }
@@ -464,6 +538,7 @@ footer {
   text-align: center;
 }
 
+/* Animação aplicada nas seções observadas pelo JavaScript */
 .revelar {
   opacity: 0;
   transform: translateY(24px);
@@ -505,8 +580,27 @@ footer {
 @media (max-width: 720px) {
   header {
     padding: 16px 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-botao {
+    display: inline-flex;
+  }
+
+  nav {
+    width: 100%;
+    display: none;
     flex-direction: column;
-    gap: 14px;
+    padding-top: 10px;
+  }
+
+  nav.aberto {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
   }
 
   main {
@@ -530,7 +624,7 @@ footer {
     border-radius: 20px;
   }
 
-  button {
+  button[type="submit"] {
     width: 100%;
   }
 }

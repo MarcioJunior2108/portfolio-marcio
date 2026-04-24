@@ -10,10 +10,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Cabeçalho fixo com navegação por âncoras -->
   <header>
     <a class="logo" href="#inicio">Márcio Oliveira</a>
 
-    <nav>
+    <div class="header-acoes">
+      <button class="tema-botao" id="temaBotao" type="button" aria-label="Alternar tema">
+        Alternar tema
+      </button>
+      <button class="menu-botao" id="menuBotao" type="button" aria-label="Abrir menu" aria-expanded="false">
+        Menu
+      </button>
+    </div>
+
+    <nav id="menuNavegacao">
       <a href="#sobre">Sobre</a>
       <a href="#formacao">Formação</a>
       <a href="#portfolio">Portfólio</a>
@@ -22,9 +32,10 @@
   </header>
 
   <main>
+    <!-- Bloco inicial de apresentação -->
     <section class="hero" id="inicio">
       <div class="hero-texto">
-        <span class="tag">Desenvolvedor em formação</span>
+        <span class="tag">Portfólio acadêmico</span>
         <h1>Construindo experiências web modernas, funcionais e com identidade.</h1>
         <p>
           Sou Márcio Oliveira, estudante de Ciência da Computação com foco em desenvolvimento web.
@@ -38,25 +49,26 @@
 
         <div class="hero-metricas">
           <div>
-            <strong>HTML, CSS e JS</strong>
-            <span>Base sólida para interfaces responsivas</span>
+            <strong>HTML, CSS e JavaScript</strong>
+            <span>Base sólida para interfaces responsivas e interativas</span>
           </div>
           <div>
-            <strong>React e Node.js</strong>
-            <span>Evolução contínua em projetos full stack</span>
+            <strong>Aprendizado contínuo</strong>
+            <span>Evolução prática em projetos acadêmicos e pessoais</span>
           </div>
         </div>
       </div>
 
       <div class="hero-card">
         <p class="hero-card-titulo">Objetivo atual</p>
-        <h2>Ganhar experiência prática e entregar projetos cada vez mais completos.</h2>
+        <h2>Consolidar minha base em programação web e ampliar meu portfólio profissional.</h2>
         <p>
-          Busco oportunidades para aplicar meu conhecimento, fortalecer meu portfólio e crescer como desenvolvedor.
+          Este site reúne minha apresentação, formação, projetos e contato em uma navegação simples e funcional.
         </p>
       </div>
     </section>
 
+    <!-- Seção obrigatória: Sobre mim -->
     <section id="sobre">
       <div class="section-heading">
         <span class="tag">Sobre mim</span>
@@ -72,31 +84,38 @@
               alt="Foto de Márcio Oliveira"
               hidden
             >
-        
+            <div class="foto-placeholder" id="foto-placeholder">
+              <span>Foto de apresentação</span>
+              <small>Espaço de fallback caso a imagem não carregue</small>
+            </div>
           </div>
         </div>
 
         <div class="sobre-card">
           <p>
-            Sou Márcio Oliveira, estudante de Ciência da Computação e desenvolvedor web apaixonado por tecnologia.
-            Tenho experiência com HTML, CSS, JavaScript, React e Node.js, e estou sempre buscando evoluir minhas habilidades
-            para criar sistemas modernos, eficientes e escaláveis.
+            Sou Márcio Oliveira, estudante de Ciência da Computação e desenvolvedor web em formação.
+            Tenho interesse em criar interfaces bem organizadas, fáceis de usar e visualmente profissionais.
           </p>
           <p>
-            Meu foco está em unir visual limpo, boa usabilidade e código organizado para entregar páginas e sistemas
-            com mais clareza, confiança e resultado.
+            Entre meus hobbies estão estudar tecnologia, explorar novas ferramentas para desenvolvimento,
+            ouvir música e praticar projetos que me ajudam a evoluir em HTML, CSS e JavaScript.
+          </p>
+          <p>
+            Meu foco é unir boa apresentação visual, usabilidade e código limpo para construir páginas e sistemas
+            cada vez mais completos.
           </p>
 
           <div class="sobre-topicos">
             <span>Interfaces responsivas</span>
             <span>Projetos práticos</span>
             <span>Aprendizado constante</span>
-            <span>Visão full stack</span>
+            <span>Organização visual</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Seção obrigatória: Formação -->
     <section id="formacao">
       <div class="section-heading">
         <span class="tag">Formação</span>
@@ -106,46 +125,47 @@
       <div class="timeline">
         <article class="timeline-item">
           <strong>Ciência da Computação</strong>
-          <p>Graduação em andamento com foco em lógica, programação e desenvolvimento de sistemas.</p>
+          <p>Graduação em andamento, com estudo de lógica, algoritmos, programação e desenvolvimento de sistemas.</p>
         </article>
 
         <article class="timeline-item">
-          <strong>Cursos complementares em Desenvolvimento Web Full Stack</strong>
-          <p>Prática com criação de interfaces, integração entre front-end e back-end e construção de projetos reais.</p>
+          <strong>Cursos complementares</strong>
+          <p>Estudos em desenvolvimento web com foco em HTML5, CSS3, JavaScript e construção de projetos práticos.</p>
         </article>
 
         <article class="timeline-item">
-          <strong>Inglês intermediário</strong>
-          <p>Leitura técnica e estudo contínuo para ampliar repertório profissional e acesso a novas referências.</p>
+          <strong>Idiomas</strong>
+          <p>Português nativo e inglês intermediário para leitura técnica, documentação e aprendizado contínuo.</p>
         </article>
       </div>
     </section>
 
+    <!-- Seção obrigatória: Portfólio -->
     <section id="portfolio">
       <div class="section-heading">
         <span class="tag">Portfólio</span>
         <h2>Projetos que mostram minha evolução</h2>
       </div>
 
-      <p class="section-texto">Alguns projetos desenvolvidos durante minha trajetória:</p>
+      <p class="section-texto">Alguns trabalhos desenvolvidos durante minha trajetória de aprendizado:</p>
 
       <div class="projetos">
         <article class="card">
           <span class="card-etiqueta">Dashboard</span>
           <h3>Dashboard de Infoprodutos</h3>
-          <p>Sistema com gráficos, autenticação e controle de dados para acompanhamento mais inteligente.</p>
+          <p>Sistema com gráficos, autenticação e organização de dados para acompanhamento de resultados.</p>
           <a href="https://dashboard-infor-hub.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
         </article>
 
         <article class="card">
           <span class="card-etiqueta">Portfólio</span>
           <h3>Portfólio Profissional</h3>
-          <p>Site com apresentação de habilidades, projetos e identidade visual voltada para posicionamento profissional.</p>
+          <p>Projeto de apresentação pessoal com foco em identidade visual, clareza das informações e navegação intuitiva.</p>
           <a href="https://devportifolio-jr.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
         </article>
 
         <article class="card">
-          <span class="card-etiqueta">Sistema Web</span>
+          <span class="card-etiqueta">Aplicação Web</span>
           <h3>Playlist Music</h3>
           <p>Aplicação web para explorar músicas em uma interface moderna, organizada e focada na experiência do usuário.</p>
           <a href="https://playlist-music-sand.vercel.app/" target="_blank" rel="noreferrer">Ver projeto</a>
@@ -153,16 +173,17 @@
       </div>
     </section>
 
+    <!-- Seção obrigatória: Contato -->
     <section id="contato">
       <div class="section-heading">
         <span class="tag">Contato</span>
         <h2>Vamos conversar sobre oportunidades e projetos</h2>
       </div>
 
-      <form id="formContato">
-        <input type="text" id="nome" placeholder="Seu nome">
-        <input type="email" id="email" placeholder="Seu e-mail">
-        <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+      <form id="formContato" novalidate>
+        <input type="text" id="nome" placeholder="Seu nome" aria-label="Nome">
+        <input type="email" id="email" placeholder="Seu e-mail" aria-label="E-mail">
+        <textarea id="mensagem" placeholder="Sua mensagem" aria-label="Mensagem"></textarea>
         <button type="submit">Enviar mensagem</button>
       </form>
     </section>
